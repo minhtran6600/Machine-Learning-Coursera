@@ -14,9 +14,18 @@ Below is the Course Structure for anyone who wish to navigate the repositories e
 ### Week 2: Linear Regression with Multiple Variables
 * Linear Regression with Multiple Variables
 * Octave/Matlab Tutorial
-* **Programming Exercise 1**
+* **Programming Exercise 1**: Linear Regression
 
-### Week 3: (To be Updated)
+### Week 3: Logistic Regression
+* Logistic Regression
+* Regularization
+* **Programming Exercise 2**: Logistic Regression
+
+### Week 4: Neural Network Representation
+* Neural Network Intuition and Representation
+* **Programming Exercise 3**: Multi-class Classification and Neural Networks
+
+### Week 5: (To be updated)
 
 ## Acknowledgement
 
