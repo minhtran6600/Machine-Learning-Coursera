@@ -10,6 +10,7 @@ m = length(y); % number of training examples
 
 % You need to return the following variables correctly 
 J = 0;
+s = size(theta);
 grad = zeros(size(theta));
 
 % ====================== YOUR CODE HERE ======================
@@ -36,17 +37,16 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+% Calculate the hypothesis
+h = sigmoid(X * theta);
 
+% Calculate the cost
+J = (-1/m) * (y' * log(h) + (1 - y)' * log(1-h)) + (lambda/(2*m))*sum(theta(2:s, 1) .^ 2);
 
-
-
-
-
-
-
+% Calculate the Gradients
+grad(1)   = (1/m) * X(:, 1)'   * (h - y);
+grad(2:s) = (1/m) * X(:, 2:s)' * (h - y) + (lambda/m) * theta(2:s, 1);
 
 % =============================================================
-
-grad = grad(:);
 
 end
