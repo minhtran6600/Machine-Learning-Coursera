@@ -25,7 +25,12 @@ Below is the Course Structure for anyone who wish to navigate the repositories e
 * Neural Network Intuition and Representation
 * **Programming Exercise 3**: Multi-class Classification and Neural Networks
 
-### Week 5: (To be updated)
+### Week 5: Neural Network Learning
+* Cost Function - Regularization
+* Backpropagation Algorithm and Application
+* **Programming Exercise 4**: Neural Network Learning
+
+### Week 6: (To be Updated)
 
 ## Acknowledgement
 
