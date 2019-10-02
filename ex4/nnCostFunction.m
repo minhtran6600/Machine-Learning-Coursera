@@ -38,7 +38,36 @@ Theta2_grad = zeros(size(Theta2));
 %         variable J. After implementing Part 1, you can verify that your
 %         cost function computation is correct by verifying the cost
 %         computed in ex4.m
-%
+
+% Add bias unit to the input layer
+X = [ones(size(X, 1), 1) X];
+a1 = X;
+
+% Pass the input through first layer
+z2 = X * Theta1';
+a2 = sigmoid(z2); 
+
+% Calculate the predicted value
+a2 = [ones(size(a2, 1), 1) a2];
+z3 = a2 * Theta2';
+a3 = sigmoid(z3);
+
+y_k = zeros(size(X, 1), num_labels);
+
+% Transform the output to fit the single regression
+for k=1:num_labels
+    y_k(:, k) = (y == k);
+end
+
+% Calculate the Regularization term
+colTheta1 = size(Theta1, 2);
+colTheta2 = size(Theta2, 2);
+J_reg = (lambda / (2 * m)) * (sum((Theta1(:, 2:colTheta1) .^ 2), 'all') + sum((Theta2(:, 2:colTheta2) .^ 2), 'all'));
+
+% Calculate the Cost Function
+J = (-1/m) * sum((y_k .* log(a3) + (1 - y_k) .* log(1 - a3)), 'all') + J_reg;
+
+
 % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
 %         the cost function with respect to Theta1 and Theta2 in Theta1_grad and
@@ -53,7 +82,19 @@ Theta2_grad = zeros(size(Theta2));
 %         Hint: We recommend implementing backpropagation using a for-loop
 %               over the training examples if you are implementing it for the 
 %               first time.
-%
+
+% Calculate the "error"
+delta3 = (a3 - y_k);
+delta2 = delta3 * Theta2 .* sigmoidGradient([ones(size(X, 1), 1) z2]);
+
+% Calculate the gradient
+Theta1_grad = Theta1_grad + (1/m) * delta2(:, 2:size(delta2, 2))' * a1;
+Theta2_grad = Theta2_grad + (1/m) * delta3' * a2;
+
+% Calculate the Regularization
+Theta1_grad = Theta1_grad + (lambda/m) * [zeros(size(Theta1, 1), 1), Theta1(:, 2:size(Theta1, 2))];
+Theta2_grad = Theta2_grad + (lambda/m) * [zeros(size(Theta2, 1), 1), Theta2(:, 2:size(Theta2, 2))];
+
 % Part 3: Implement regularization with the cost function and gradients.
 %
 %         Hint: You can implement this around the code for
@@ -61,18 +102,6 @@ Theta2_grad = zeros(size(Theta2));
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
