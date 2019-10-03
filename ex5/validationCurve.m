@@ -39,14 +39,18 @@ error_val = zeros(length(lambda_vec), 1);
 %
 %
 
+X    = [ones(size(X, 1), 1) X];
+Xval = [ones(size(Xval, 1), 1) Xval];
 
-
-
-
-
-
-
-
+for i = 1:length(lambda_vec)
+    % Train the Linear Regression
+    lambda = lambda_vec(i);
+    theta = trainLinearReg(X, y, lambda);
+    
+    % Calculate the Cost
+    error_train(i) = linearRegCostFunction(X, y, theta, 0);
+    error_val(i)   = linearRegCostFunction(Xval, yval, theta, 0);
+end
 
 % =========================================================================
 
