@@ -30,7 +30,10 @@ Below is the Course Structure for anyone who wish to navigate the repositories e
 * Backpropagation Algorithm and Application
 * **Programming Exercise 4**: Neural Network Learning
 
-### Week 6: (To be Updated)
+### Week 6: Machine Learning System Design
+* Advice for Applying Machine Learning
+* **Programming Exercise 5**: Regularized Linear Regression with Bias/Variance
+* Machine Learning System Design
 
 ## Acknowledgement
 
