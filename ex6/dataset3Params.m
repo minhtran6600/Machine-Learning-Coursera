@@ -8,6 +8,7 @@ function [C, sigma] = dataset3Params(X, y, Xval, yval)
 %
 
 % You need to return the following variables correctly.
+error = 1;
 C = 1;
 sigma = 0.3;
 
@@ -23,11 +24,27 @@ sigma = 0.3;
 %        mean(double(predictions ~= yval))
 %
 
+vals = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30];
 
-
-
-
-
+for i=1:size(vals, 2)
+    for j=1:size(vals, 2)
+        % Retrieve the testing C and sigma validation
+        C_val = vals(i);
+        sigma_val = vals(j);
+        
+        % Train and predicts
+        model = svmTrain(X, y, C_val, @(x1, x2)gaussianKernel(x1, x2, sigma_val));
+        predictions = svmPredict(model, Xval);
+        
+        % Update the C and sigma values
+        error_val = mean(double(predictions ~= yval));
+        if (error > error_val)
+            C = C_val;
+            sigma = sigma_val;
+            error = error_val;
+        end
+    end
+end
 
 % =========================================================================
 
