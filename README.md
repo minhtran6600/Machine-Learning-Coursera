@@ -35,6 +35,12 @@ Below is the Course Structure for anyone who wish to navigate the repositories e
 * **Programming Exercise 5**: Regularized Linear Regression with Bias/Variance
 * Machine Learning System Design
 
+### Week 6: Support Vector Machines
+* Large Margin Classification
+* Kernels
+* SVMs in practice
+* **Programming Exercise 6**: Support Vector Machines
+
 ## Acknowledgement
 
 These knowledge and course, while written by me, will not be made possible without the extraordinary and outstanding lecture from Prof. Andrew Ng. This is a really great course and I recommend for anyone who wants to enter the field of Machine Learning.
