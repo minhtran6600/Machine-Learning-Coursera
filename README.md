@@ -35,11 +35,18 @@ Below is the Course Structure for anyone who wish to navigate the repositories e
 * **Programming Exercise 5**: Regularized Linear Regression with Bias/Variance
 * Machine Learning System Design
 
-### Week 6: Support Vector Machines
+### Week 7: Support Vector Machines
 * Large Margin Classification
 * Kernels
 * SVMs in practice
 * **Programming Exercise 6**: Support Vector Machines
+
+### Week 8: K-means Clustering and PCA
+* Unsupervised Learning: K-means Clustering
+* Principal Component Analysis
+* **Programming Exercise 7**: K-means Clustering and PCA
+
+### Week 9: (to be updated)
 
 ## Acknowledgement
 
