@@ -46,7 +46,12 @@ Below is the Course Structure for anyone who wish to navigate the repositories e
 * Principal Component Analysis
 * **Programming Exercise 7**: K-means Clustering and PCA
 
-### Week 9: (to be updated)
+### Week 9: Anomaly Detection and Recommender System
+* Anomaly Detection
+* Recommender System
+* **Programming Exercise 8**: Anomaly Detection and Recommender System
+
+### Week 10: (to be updated)
 
 ## Acknowledgement
 
